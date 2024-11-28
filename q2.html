@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Book List</h1>
+</body>
+
+<script>
+    fetch('q1.json')
+            .then(response => {
+                return response.json();
+            })
+            .then(data => {
+                console.log("The title of the first book: " + data.books[0].title);
+                console.log("The author of the second book: "+ data.books[1].author);
+                const genres = data.books[0].genres.concat(data.books[1].genres)
+                console.log("Genre of all books: " + genres)
+            });
+
+
+</script>
+
+</html>
